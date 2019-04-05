@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+  </head>
+  <body>
+    <h1>Videos</h1>
+    <ul>
+      <% for(var i=0; i<video.length; i++) {%>
+      <li>
+        <h4><%= video[i].title %></h4>
+        <iframe width="560" height="315" src=<%=video[i].url %> frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <span><%= video[i].desc %></span>
+        <span><%= video[i].message %></span>
+      </li>
+    </ul>
+    <h2>Comment</h2>
+    <ul class="index comments">
+    <% for(var j=0; j<video[i].comments.length; j++) {%>
+      <li class="index comment">
+        <span><%= video[i].comments[j].name %></span>
+        <span><%= video[i].comments[j].comment %></span>
+      </li>
+    </ul>
+    <% } %>
+    <% } %>
+      <input type="text" placeholder="Name" name="name">
+      <input type="text" placeholder="Comment" name="comment">
+      <input type="text" name="title" placeholder="Title">
+      <button type="submit">Submit</button>
+    <script src="main.js"></script>
+  </body>
+</html>
